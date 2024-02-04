@@ -1,9 +1,15 @@
-function sayMyName(name: string): void {
-  if (name === "Heisenberg") {
-    console.log("You're right 👍");
-  } else {
-    console.log("You're wrong 👎");
-  }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function try1(): Promise<void> {
+  // const vitest = await startVitest("test");
+
+  // await vitest?.close();
+  const vitestNode = await import("vitest/node");
+  // const vitest = await vitestNode.startVitest("test");
+  const vitest = await vitestNode.startVitest("test",[], {
+    watch: false});  
+console.log('aaaaaa>')
+  await vitest?.close();
 }
 
-sayMyName("Heisenberg");
+try1();
+
